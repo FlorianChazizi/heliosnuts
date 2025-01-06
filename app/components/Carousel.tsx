@@ -10,6 +10,7 @@ import '../styles/carousel.css';
 import banner1 from '../assets/dnbanner1.jpg';
 import banner2 from '../assets/dnbanner2.jpg';
 import banner3 from '../assets/dnbanner3.png';
+import banner4 from '../assets/dnbanner4.webp';
 
 import Image from 'next/image';
 
@@ -19,6 +20,7 @@ const Carousel = () => {
         banner1,
         banner2,
         banner3,
+        banner4
       ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -85,10 +87,10 @@ const Carousel = () => {
   }, [currentIndex]); // Depend on currentIndex to reset the timer on manual slide changes
 
   return (
-  <div className="relative w-full max-w-4xl mx-auto">
+  <div className="relative w-full h-[100vh]  mx-auto">
       {/* Carousel Container */}
       <div
-        className="carousel relative w-full overflow-hidden rounded-lg"
+        className="carousel relative w-full h-[80vh] overflow-hidden rounded-lg"
         ref={carouselRef} // Reference for touch events
         onTouchStart={handleTouchStart}
         onTouchMove={handleTouchMove}
@@ -103,10 +105,9 @@ const Carousel = () => {
             <div key={index} className="carousel-item w-full flex-shrink-0 m-x-5">
               <Image
                 src={image}
-                alt={`Work ${index + 1}`}
-                width={800}
-                height={400}
-                className="w-full object-contain h-96"
+                alt={`Banner ${index + 1}`}
+                objectFit="cover" // Ensures the image covers the container
+                className='h-fit w-full	'
               />
             </div>
           ))}
