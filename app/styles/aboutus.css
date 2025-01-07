@@ -14,7 +14,7 @@
     line-height: 1.8; /* Improve text spacing */
   }
   
-  .about h1 {
+  .about h2 {
     font-size: 2.5rem; /* Large heading */
     margin-bottom: 1rem;
     color: #c88d3d; /* A nutty golden-brown color */
@@ -27,6 +27,7 @@
   .about p {
     font-size: 1.2rem;
     margin-bottom: 1rem;
+    color: #333;
   }
   
   /* Responsive Design */

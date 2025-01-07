@@ -1,0 +1,89 @@
+/* Main container for the products */
+.products-container {
+    padding: 2rem;
+    margin-top: 5rem;
+    height:auto;
+  }
+  
+  /* Title styling */
+  .product-header{
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+    color: #333;
+  }
+  
+  /* Grid for larger screens */
+  .product-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);   
+     gap: 1.5rem; 
+  }
+  
+  /* Horizontal slider for smaller screens */
+  @media (max-width: 768px) {
+    .product-grid {
+      display: flex; /* Switch to flexbox for horizontal layout */
+      flex-wrap: nowrap; /* Prevent wrapping of items */
+      overflow-x: auto; /* Enable horizontal scrolling */
+      gap: 1rem; /* Space between items */
+      padding: 1rem; /* Add padding for better scrolling experience */
+    }
+  
+    .product-card {
+      flex: 0 0 auto; /* Prevent shrinking and set a fixed size */
+      width: 200px; /* Set card width for consistency */
+    }
+  
+    .product-grid::-webkit-scrollbar {
+      height: 8px; /* Custom scrollbar height */
+    }
+  
+    .product-grid::-webkit-scrollbar-thumb {
+      background: #c88d3d; /* Thumb color */
+      border-radius: 4px; /* Rounded scrollbar thumb */
+    }
+  
+    .product-grid::-webkit-scrollbar-track {
+      background: #f1f1f1; /* Scrollbar track color */
+    }
+  }
+  
+  /* Product card styling */
+  .product-card {
+    text-align: center;
+    padding: 1rem;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .product-card:hover {
+    .product-image {
+        transform: scale(1.1);
+    }
+    .product-name{
+        color: #fcd00b;
+    }
+  }
+  
+  /* Image styling */
+  .product-image {
+    width: 100%;
+    height: auto;
+    max-height: 250px;
+    object-fit: contain;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+  }
+  
+
+  
+  /* Product name styling */
+  .product-name {
+    margin-top: 1rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+    transition: 0.3s ease-in-out;
+  }
+  
