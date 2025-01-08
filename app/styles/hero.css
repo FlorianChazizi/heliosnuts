@@ -47,7 +47,8 @@
       align-items: center;
       text-align: center;
         letter-spacing: 1.2rem;
-      
+      color: bisque;
+      text-shadow: 2px 2px 2px rgb(0, 0, 0);
   }
   
   /* Overlay for darkening t`he background */

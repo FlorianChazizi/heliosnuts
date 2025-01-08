@@ -1,18 +1,23 @@
 .navigation-bar{
-    background-color: rgb(255, 255, 255);
+    background-color: #689F38;
   }
 
 .navlinks {
     position: relative;
     display: inline-block;
     padding: .5rem;
-    color: rgb(37,38,32);
+    color: white;
     text-decoration: none; /* Remove default underline */
     font-size: 1.2rem;
     font-weight: 700;
+    transition: color 0.3s ease;
+
   }
 
-  
+  .navlinks:hover {
+    color: #FFC107; /* Bright Amber */
+  }
+
   /* Create the underline effect */
   .navlinks::after {
     content: '';
@@ -20,8 +25,8 @@
     left: 0;
     bottom: 0;
     width: 100%;
-    height: 2px;
-    background-color: rgb(37,38,32); /* Color of the underline */
+    height: 3px;
+    background-color: #FFC107; /* Color of the underline */
     transform: scaleX(0); /* Initially hidden (collapsed) */
     transform-origin: left; /* Start animation from the left */
     transition: transform 0.25s ease; /* Smooth transition effect */
@@ -30,4 +35,5 @@
   /* On hover, show the underline by expanding it */
   .navlinks:hover::after {
     transform: scaleX(1); /* Fully expand the underline */
+    background-color: #FFC107;
   }
