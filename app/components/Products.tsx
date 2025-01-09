@@ -33,14 +33,14 @@ const Products = () => {
                         }`}
                     onClick={() => setSelectedCategory("Sweet")}
                 >
-                    Sweet
+                    Γλυκά
                 </button>
                 <button
                     className={`category-button ${selectedCategory === "Non-Sweet" ? "active" : ""
                         }`}
                     onClick={() => setSelectedCategory("Non-Sweet")}
                 >
-                    Non-Sweet
+                    Αλμυρά
                 </button>
             </div>
 
