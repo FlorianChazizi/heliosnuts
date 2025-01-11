@@ -1,7 +1,7 @@
 /* Main container for the products */
 .products-container {
     padding: 5rem 2rem ;
-    height: 100vh;
+    height: auto;
     background-color: #EDEAE0;
   }
   
@@ -23,45 +23,7 @@
   .product-grid.fade-in {
     animation: fadeIn 0.5s ease-in-out;
   }
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  
-  /* Horizontal slider for smaller screens */
-  @media (max-width: 768px) {
-    .product-grid {
-      display: flex; /* Switch to flexbox for horizontal layout */
-      flex-wrap: nowrap; /* Prevent wrapping of items */
-      overflow-x: auto; /* Enable horizontal scrolling */
-      gap: 1rem; /* Space between items */
-      padding: 1rem; /* Add padding for better scrolling experience */
-    }
-  
-    .product-card {
-      flex: 0 0 auto; /* Prevent shrinking and set a fixed size */
-      width: 200px; /* Set card width for consistency */
-    }
-  
-    .product-grid::-webkit-scrollbar {
-      height: 8px; /* Custom scrollbar height */
-    }
-  
-    .product-grid::-webkit-scrollbar-thumb {
-      background: #c88d3d; /* Thumb color */
-      border-radius: 4px; /* Rounded scrollbar thumb */
-    }
-  
-    .product-grid::-webkit-scrollbar-track {
-      background: #f1f1f1; /* Scrollbar track color */
-    }
-  }
+
   
   /* Product card styling */
   .product-card {
@@ -137,4 +99,43 @@
 .category-button.active {
   background-color: #4e342e; /* Dark Chocolate */
   color: white;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Horizontal slider for smaller screens */
+@media (max-width: 768px) {
+  .product-grid {
+    display: flex; /* Switch to flexbox for horizontal layout */
+    flex-wrap: nowrap; /* Prevent wrapping of items */
+    overflow-x: auto; /* Enable horizontal scrolling */
+    gap: 1rem; /* Space between items */
+    padding: 1rem; /* Add padding for better scrolling experience */
+  }
+
+  .product-card {
+    flex: 0 0 auto; /* Prevent shrinking and set a fixed size */
+    width: 200px; /* Set card width for consistency */
+  }
+
+  .product-grid::-webkit-scrollbar {
+    height: 8px; /* Custom scrollbar height */
+  }
+
+  .product-grid::-webkit-scrollbar-thumb {
+    background: #c88d3d; /* Thumb color */
+    border-radius: 4px; /* Rounded scrollbar thumb */
+  }
+
+  .product-grid::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Scrollbar track color */
+  }
 }

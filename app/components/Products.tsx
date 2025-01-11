@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import Image from "next/image";
-import { motion, AnimatePresence } from "framer-motion";
 import "../styles/products.css";
 import productImage from "../assets/product-img.png";
 
@@ -29,46 +28,24 @@ const Products = () => {
             {/* Category Buttons */}
             <div className="category-buttons">
                 <button
-                    className={`category-button ${selectedCategory === "Sweet" ? "active" : ""
-                        }`}
+                    className={`category-button ${selectedCategory === "Sweet" ? "active" : ""}`}
                     onClick={() => setSelectedCategory("Sweet")}
                 >
                     Γλυκά
                 </button>
                 <button
-                    className={`category-button ${selectedCategory === "Non-Sweet" ? "active" : ""
-                        }`}
+                    className={`category-button ${selectedCategory === "Non-Sweet" ? "active" : ""}`}
                     onClick={() => setSelectedCategory("Non-Sweet")}
                 >
                     Αλμυρά
                 </button>
-                {/* <button
-                    className={`category-button ${selectedCategory === "Non-Sweet" ? "active" : ""
-                        }`}
-                    onClick={() => setSelectedCategory("Non-Sweet")}
-                >
-                    Ξηροί Καρποί
-                </button>
-                <button
-                    className={`category-button ${selectedCategory === "Non-Sweet" ? "active" : ""
-                        }`}
-                    onClick={() => setSelectedCategory("Non-Sweet")}
-                >
-                    Σνακ
-                </button> */}
             </div>
 
-            {/* Animated Product Grid */}
             <div className="product-grid">
-                <AnimatePresence>
                     {filteredProducts.map((product) => (
-                        <motion.div
+                        <div
                             key={product.name}
                             className="product-card"
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            exit={{ opacity: 0, y: -20 }}
-                            transition={{ duration: 0.25 }}
                         >
                             <Image
                                 className="product-image"
@@ -78,9 +55,8 @@ const Products = () => {
                                 data-aos="fade-up"
                             />
                             <p className="product-name">{product.name}</p>
-                        </motion.div>
+                        </div>
                     ))}
-                </AnimatePresence>
             </div>
         </div>
     );
