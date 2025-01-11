@@ -13,8 +13,7 @@ export default function Home() {
   
   return (
     <div>
-              <Navbar />
-
+      <Navbar />
       <Hero />
       <AboutUs />
       <Line />

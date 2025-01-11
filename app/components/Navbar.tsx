@@ -8,17 +8,9 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
-  const handleLinkClick = () => {
-    setIsOpen(false); // Close the menu
-  };
-
   useEffect(() => {
-    // Check if window exists before accessing it
     if (typeof window !== "undefined") {
-      const handleScroll = () => {
-        setIsScrolled(window.scrollY > 50); // Detect scroll position
-      };
-
+      const handleScroll = () => setIsScrolled(window.scrollY > 50);
       window.addEventListener("scroll", handleScroll);
       return () => window.removeEventListener("scroll", handleScroll);
     }
@@ -92,21 +84,21 @@ export default function Navbar() {
             <a
               href="#our-work"
               className="block text-white px-3 py-2 rounded-md text-base font-medium text-center"
-              onClick={handleLinkClick}
+              onClick={() => setIsOpen(false)}
             >
               Αρχική
             </a>
             <a
               href="#services"
               className="block text-white px-3 py-2 rounded-md text-base font-medium text-center"
-              onClick={handleLinkClick}
+              onClick={() => setIsOpen(false)}
             >
               Προϊόντα
             </a>
             <a
               href="#about"
               className="block text-white px-3 py-2 rounded-md text-base font-medium text-center"
-              onClick={handleLinkClick}
+              onClick={() => setIsOpen(false)}
             >
               Επικοινωνία
             </a>
