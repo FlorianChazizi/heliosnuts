@@ -1,20 +1,25 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "../styles/navbar.css";
 import Image from "next/image";
 import logo from "../assets/helios-logo.png";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isClient, setIsClient] = useState(false);  // Track client-side rendering
 
+  // This will ensure that the code inside only runs in the client
+  useEffect(() => {
+    setIsClient(true);  // Mark that the component has mounted on the client side
+  }, []);
 
+  // Return early if not rendered on the client yet to prevent hydration errors
+  if (!isClient) {
+    return null;
+  }
 
   return (
-    <nav
-      className={`navigation-bar  ${
-        isOpen ? "is-open" : ""
-      }`}
-    >
+    <nav className={`navigation-bar ${isOpen ? "is-open" : ""}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5">
         <div className="flex justify-between h-16">
           <div className="flex-shrink-0 flex items-center">
