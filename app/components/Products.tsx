@@ -42,7 +42,7 @@ const Products = () => {
                 >
                     Αλμυρά
                 </button>
-                <button
+                {/* <button
                     className={`category-button ${selectedCategory === "Non-Sweet" ? "active" : ""
                         }`}
                     onClick={() => setSelectedCategory("Non-Sweet")}
@@ -55,7 +55,7 @@ const Products = () => {
                     onClick={() => setSelectedCategory("Non-Sweet")}
                 >
                     Σνακ
-                </button>
+                </button> */}
             </div>
 
             {/* Animated Product Grid */}
@@ -68,7 +68,7 @@ const Products = () => {
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             exit={{ opacity: 0, y: -20 }}
-                            transition={{ duration: 0.3 }}
+                            transition={{ duration: 0.25 }}
                         >
                             <Image
                                 className="product-image"
