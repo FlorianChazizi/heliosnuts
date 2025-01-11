@@ -17,7 +17,7 @@
   .about h2 {
     font-size: 2.5rem; /* Large heading */
     margin-bottom: 1rem;
-    color: #c88d3d; /* A nutty golden-brown color */
+    color: #C88D3D; /* A nutty golden-brown color */
     text-align: left;
     border-bottom: 3px solid #c88d3d; /* Add a border below the heading */
     width: 50%; /* Limit the border's width to 50% of the container */

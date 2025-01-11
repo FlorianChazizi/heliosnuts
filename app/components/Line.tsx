@@ -7,9 +7,7 @@ const Line = () => {
         <div className='line'>
             <div className='overlay'>
                 <div className='content'>
-                    <h3 className='color-white'>
-                        Διατροφική Αξία
-                    </h3>
+
                 </div>
             </div>
         </div>

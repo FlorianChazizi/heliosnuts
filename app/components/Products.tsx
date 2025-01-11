@@ -1,3 +1,4 @@
+"use client"
 import React, { useState } from "react";
 import Image from "next/image";
 import "../styles/products.css";
@@ -22,7 +23,7 @@ const Products = () => {
     );
 
     return (
-        <div className="products-container">
+        <div className="products-container" id="products">
             <h4 className="product-header">Τα Προϊόντα</h4>
 
             {/* Category Buttons */}

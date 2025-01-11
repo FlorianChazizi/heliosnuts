@@ -11,7 +11,7 @@ const AboutUs: React.FC = () => {
       }, []);
 
   return (
-    <section className="about">
+    <section className="about" id="aboutus">
       <div className="content">
         <h2 data-aos="fade-down">The Company</h2>
         <p data-aos="fade-down">
