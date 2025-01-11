@@ -6,16 +6,16 @@ import logo from "../assets/helios-logo.png";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-  const [isClient, setIsClient] = useState(false);  // Track client-side rendering
+  const [isClient, setIsClient] = useState(false);  // Track if we're on the client side
 
-  // This will ensure that the code inside only runs in the client
+  // Ensure the component only runs on the client-side
   useEffect(() => {
-    setIsClient(true);  // Mark that the component has mounted on the client side
+    setIsClient(true);  // Update the state once the component mounts
   }, []);
 
-  // Return early if not rendered on the client yet to prevent hydration errors
+  // Prevent rendering client-side only code during SSR (server-side rendering)
   if (!isClient) {
-    return null;
+    return null; // Render nothing on the server side to avoid hydration issues
   }
 
   return (
