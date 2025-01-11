@@ -6,11 +6,15 @@ import Products from "./components/Products";
 import Map from './components/Map';
 import Partners from "./components/Partners";
 import ContactUs from "./components/ContactUs";
+import dynamic from "next/dynamic";
 
 export default function Home() {
+  const Navbar = dynamic(() =>  import("./components/Navbar"), { ssr: false });
   
   return (
     <div>
+              <Navbar />
+
       <Hero />
       <AboutUs />
       <Line />
