@@ -1,19 +1,17 @@
 "use client";
-import dynamic from "next/dynamic";
 import Hero from "./components/Hero";
 import AboutUs from "./components/AboutUs";
 import Line from "./components/Line";
 import Products from "./components/Products";
-import Map from "./components/Map";
+import Map from './components/Map';
 import Partners from "./components/Partners";
 import ContactUs from "./components/ContactUs";
-
-const Navbar = dynamic(() => import("./components/Navbar"), { ssr: false });
-
+import Navbar from "./components/Navbar";
 export default function Home() {
+  
   return (
     <div>
-      <Navbar />
+              <Navbar />
       <Hero />
       <AboutUs />
       <Line />

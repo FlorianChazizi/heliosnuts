@@ -1,24 +1,12 @@
 /* General Navbar Styles */
 .navigation-bar {
-  position: relative;
+  position: sticky;
   top: 0;
   width: 100%;
   z-index: 50; /* Ensures it stays above all other elements */
-  transition: background-color 0.3s ease, color 0.3s ease transform 0.5s ease;
-  background-color: #689f38; /* Solid background color on scroll */
+  transition: background-color 0.3s ease, color 0.3s ease;
+  background-color: transparent; /* Initial transparent background */
   color: white; /* White text for visibility over the hero section */
-
-}
-@keyframes scrollEffect {
-  0% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-200px); /* Move up as if scrolled */
-  }
-  100% {
-    transform: translateY(0);
-  }
 }
 
 /* Add the solid background when scrolled */
