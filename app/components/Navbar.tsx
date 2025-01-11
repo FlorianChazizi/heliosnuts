@@ -6,19 +6,33 @@ import logo from "../assets/helios-logo.png";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
-    if (typeof window !== "undefined") {
-      const handleScroll = () => setIsScrolled(window.scrollY > 50);
-      window.addEventListener("scroll", handleScroll);
-      return () => window.removeEventListener("scroll", handleScroll);
-    }
+    setIsClient(true);
   }, []);
+
+  const handleScroll = () => {
+    if (window.scrollY > 100) {
+      setScrolled(true); // User has scrolled down 100px
+    } else {
+      setScrolled(false); // User is at the top
+    }
+  };
+
+  // Only add the scroll event listener after the component has mounted on the client
+  useEffect(() => {
+    if (isClient) {
+      window.addEventListener('scroll', handleScroll);
+      return () => window.removeEventListener('scroll', handleScroll);
+    }
+  }, [isClient]);
+
 
   return (
     <nav
-      className={`navigation-bar ${isScrolled ? "scrolled" : ""} ${
+      className={`navigation-bar ${scrolled ? "scrolled" : ""} ${
         isOpen ? "is-open" : ""
       }`}
     >
