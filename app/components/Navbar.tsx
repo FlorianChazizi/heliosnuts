@@ -1,22 +1,11 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import "../styles/navbar.css";
 import Image from "next/image";
 import logo from "../assets/helios-logo.png";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-  const [isClient, setIsClient] = useState(false);  // Track if we're on the client side
-
-  // Ensure the component only runs on the client-side
-  useEffect(() => {
-    setIsClient(true);  // Update the state once the component mounts
-  }, []);
-
-  // Prevent rendering client-side only code during SSR (server-side rendering)
-  if (!isClient) {
-    return null; // Render nothing on the server side to avoid hydration issues
-  }
 
   return (
     <nav className={`navigation-bar ${isOpen ? "is-open" : ""}`}>
