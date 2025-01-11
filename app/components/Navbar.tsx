@@ -13,23 +13,27 @@ export default function Navbar() {
   };
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50); // Detect scroll position
-    };
+    // Check if window exists before accessing it
+    if (typeof window !== "undefined") {
+      const handleScroll = () => {
+        setIsScrolled(window.scrollY > 50); // Detect scroll position
+      };
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+      window.addEventListener("scroll", handleScroll);
+      return () => window.removeEventListener("scroll", handleScroll);
+    }
   }, []);
 
   return (
     <nav
-      className={`navigation-bar ${isScrolled ? "scrolled" : ""} ${isOpen ? "is-open" : ""
-        }`}
-    >      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5">
+      className={`navigation-bar ${isScrolled ? "scrolled" : ""} ${
+        isOpen ? "is-open" : ""
+      }`}
+    >
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5">
         <div className="flex justify-between h-16">
           <div className="flex-shrink-0 flex items-center">
             <h1>
-              <a href="#">
               <Image
                 src={logo}
                 className="rounded-full object-cover"
@@ -38,11 +42,10 @@ export default function Navbar() {
                 alt="Helios Nuts"
                 title="Helios Nuts"
               />
-              </a>
             </h1>
           </div>
           <div className="hidden md:flex space-x-8 items-center">
-            <a href="#" className="navlinks">
+            <a href="#our-work" className="navlinks">
               Αρχική
             </a>
             <a href="#products" className="navlinks">
@@ -94,14 +97,14 @@ export default function Navbar() {
               Αρχική
             </a>
             <a
-              href="#products"
+              href="#services"
               className="block text-white px-3 py-2 rounded-md text-base font-medium text-center"
               onClick={handleLinkClick}
             >
               Προϊόντα
             </a>
             <a
-              href="#contactus"
+              href="#about"
               className="block text-white px-3 py-2 rounded-md text-base font-medium text-center"
               onClick={handleLinkClick}
             >
