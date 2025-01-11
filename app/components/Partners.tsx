@@ -5,7 +5,7 @@ import Coop from "../assets/Coop.png";
 import Mixahl from "../assets/Mixahl.png";
 import Mparas from "../assets/Mparas.png";
 import Alfamarket from '../assets/alfamarket.png'
-import Fthinokosmos from '../assets/Fthinokosmos.png'
+import Fthinokosmos from '../assets/fthinokosmos.png'
 import CRMariadni from '../assets/logo.svg'
 
 const Partners = () => {
