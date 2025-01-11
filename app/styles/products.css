@@ -70,14 +70,7 @@
     transition: transform 0.2s, box-shadow 0.2s;
   }
 
-  .product-card:hover {
-    .product-image {
-        transform: scale(1.1);
-    }
-    .product-name{
-        color: #fcd00b;
-    }
-  }
+
   
   /* Image styling */
   .product-image {
@@ -97,9 +90,25 @@
     font-size: 1.2rem;
     font-weight: bold;
     color: #333;
-    transition: 0.3s ease-in-out;
+    background: linear-gradient(to right, #694f31, #A0522D, #fcbe03);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: background-position 0.5s ease-in-out; /* Smooth animation */
+    background-size: 200%; /* Make the gradient bigger for smoother movement */
+    background-position: 50%; /* Initial position */
   }
   
+ 
+
+  .product-card:hover {
+    .product-image {
+        transform: scale(1.1);
+    }
+    .product-name{
+      background-position: 100%; /* Shift the gradient to the right */
+  
+    }
+  }
   /* Category Buttons */
 .category-buttons {
   display: flex;

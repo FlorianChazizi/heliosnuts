@@ -42,6 +42,20 @@ const Products = () => {
                 >
                     Αλμυρά
                 </button>
+                <button
+                    className={`category-button ${selectedCategory === "Non-Sweet" ? "active" : ""
+                        }`}
+                    onClick={() => setSelectedCategory("Non-Sweet")}
+                >
+                    Ξηροί Καρποί
+                </button>
+                <button
+                    className={`category-button ${selectedCategory === "Non-Sweet" ? "active" : ""
+                        }`}
+                    onClick={() => setSelectedCategory("Non-Sweet")}
+                >
+                    Σνακ
+                </button>
             </div>
 
             {/* Animated Product Grid */}
