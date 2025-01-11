@@ -1,38 +1,17 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import "../styles/navbar.css";
 import Image from "next/image";
 import logo from "../assets/helios-logo.png";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
-  const [isClient, setIsClient] = useState(false);
 
-  useEffect(() => {
-    setIsClient(true);
-  }, []);
-
-  const handleScroll = () => {
-    if (window.scrollY > 100) {
-      setScrolled(true); // User has scrolled down 100px
-    } else {
-      setScrolled(false); // User is at the top
-    }
-  };
-
-  // Only add the scroll event listener after the component has mounted on the client
-  useEffect(() => {
-    if (isClient) {
-      window.addEventListener('scroll', handleScroll);
-      return () => window.removeEventListener('scroll', handleScroll);
-    }
-  }, [isClient]);
 
 
   return (
     <nav
-      className={`navigation-bar ${scrolled ? "scrolled" : ""} ${
+      className={`navigation-bar  ${
         isOpen ? "is-open" : ""
       }`}
     >
