@@ -6,12 +6,10 @@ import Products from "./components/Products";
 import Map from './components/Map';
 import Partners from "./components/Partners";
 import ContactUs from "./components/ContactUs";
-import Navbar from "./components/Navbar";
 export default function Home() {
   
   return (
     <div>
-              <Navbar />
       <Hero />
       <AboutUs />
       <Line />

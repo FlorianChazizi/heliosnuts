@@ -1,6 +1,6 @@
 /* General Navbar Styles */
 .navigation-bar {
-  position: sticky;
+  position: fixed;
   top: 0;
   width: 100%;
   z-index: 50; /* Ensures it stays above all other elements */

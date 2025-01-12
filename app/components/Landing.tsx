@@ -1,13 +1,11 @@
 import React from "react";
 import "../styles/landing.css";
-import Navbar from "./Navbar";
 import Carousel from "./Carousel";
 const Landing = () => {
   return (
     <div className="landing-page">
       {/* Navbar */}
       <nav className="navbar">
-        <Navbar />
       </nav>
 
       {/* Main Content */}
